@@ -34,8 +34,10 @@ class Market
 
   def total_inventory
     @vendors.each do |vendor|
-      vendor.inventory.map do |item, price|
-        @inventory[item] += price
+      vendor.inventory.each do |item|
+        item.each do |item|
+          item.last
+        end
       end
     end
   end
